@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 si CSS3</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Imobile</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Offers" onclick="slowScroll('#main')">Offers</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Contacts">Contacts</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Imobile</h1>
+    <h3>simte-te bine acasa!</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Va oferim cele mai bune propuneri pe piata</h2>
+    </div>
+    <div class="text">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos impedit, ut vero commodi voluptate? Ipsam reiciendis, necessitatibus incidunt ipsa quis sapiente excepturi, optio iusto voluptatibus dolorem officia quidem, numquam eaque minus, autem praesentium rem architecto dolores. Ipsa unde id velit optio magni enim! Illum obcaecati, dolorem distinctio nemo, ipsum iure.</span>
+    </div>
+  </div>
+  <div id="contacts">
+    <center><h5>Contactatine</h5></center>
+    <form id="form_input">
+      <label for="name">Nume <span>*</span></label><br>
+      <input type="text" placeholder="Nume, Prenume" name="name" id="name"><br>
+      <label for="email">Email <span>*</span></label><br>
+			<input type="email" placeholder="Email" name="email" id="email"><br>
+			<label for="message">Mesaj <span>*</span></label><br>
+			<textarea placeholder="Mesaj" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Trimite</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Rate</span><br>
+      <span class="heading">Rate cu mai putin de 7%?</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+    </div>
+    <div>
+      <span class="title">Preturi</span><br>
+      <span class="heading">Cite este pretul pentru m2?</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+    </div>
+    <div>
+      <span class="title">Garantie</span><br>
+      <span class="heading">Pot fi convins ca casa va fi data in exploatare?</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
